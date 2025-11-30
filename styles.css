@@ -1,0 +1,2018 @@
+/* I used CSS variables inside :root to define a color palette.
+   This helps keep a consistent design across all pages. */
+
+/* I used "grid-template-columns: 1fr 1fr;" to create two equal columns 
+   inside the grid â€” this allows the â€œBeforeâ€ and â€œAfterâ€ images to appear 
+   side by side with equal width. */
+
+/* I used "gap" to control the spacing between the columns and rows inside the grid, 
+   instead of using margins, because it keeps the layout cleaner and consistent. */
+
+/* I used border-radius to make the corners of boxes, images, and buttons rounded.
+   This gives the design a softer and more modern look instead of sharp edges.*/
+
+:root{
+  --olive:#4d684d;     /* Main theme color */
+  --olive-700:#3c553c; /* Darker shade for titles */
+  --beige:#f3ede4;   /* Light beige for section backgrounds */
+  --mint:#f5f8f4;  /* Mint color for vision section */
+  --text:#1f1f1f;    /* Main text color */
+  --muted:#6d776d;     /* Muted text color for descriptions */
+  --radius:20px;     /* Used for consistent rounded corners */
+}
+
+*{ box-sizing:border-box }
+
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  color:var(--text);
+  background:#fff;
+  line-height:1.65;
+}
+
+.maincont{
+  max-width:1160px;
+  margin:0 auto;
+  padding:0 24px;
+  width:100%;
+}
+
+
+
+
+
+
+
+
+/*    Logo    */
+
+.logoimg{
+  width:69px;
+  height:69px;
+  border-radius:16px; 
+  overflow:hidden;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:#ffffff15;
+  border:1px solid #ffffff3a;
+}
+
+.logoimg img{
+  width:100%;
+  height:100%;
+  display:block;
+}
+img.logo{
+  width:70px;
+  height:70px;
+}
+
+.headerbox img{
+ height:none;
+ width:auto;
+}
+
+.headerbox .logoimg img{ 
+ height:86px;
+}
+
+.brandtxt{
+  font-weight:800;
+  display:inline-block;
+  font-size:1.2rem;
+}
+
+.navlinks{
+  display:flex;
+  gap:18px;
+  flex-wrap:wrap;
+}
+.navlinks a{
+  color:#fff;
+  text-decoration:none;
+  font-weight:600;
+  opacity:.95;
+}
+.navlinks a:hover{
+  text-decoration:underline;
+}
+
+/* Breadcrumb  */
+/* I added breadcrumb navigation to show the userâ€™s page location. */
+
+.bread{
+  background:#e8f0e7;
+  border-bottom:1px solid #e6ece4;
+  padding:10px 0;
+}
+.bread .maincont{
+  display:flex;
+  align-items:center;
+  font-size:.95rem;
+}
+.bread ol{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:flex;
+  align-items:center;
+}
+.bread li + li::before{
+  content:" > ";
+  margin:0 8px;
+  color:#8fa28f;
+  font-weight:600;
+}
+.bread a{
+  color:var(--olive-700);
+  text-decoration:none;
+  font-weight:600;
+}
+.bread a:hover{ text-decoration:underline; }
+.bread .pagecrumb{
+  color:var(--olive-700);
+  font-weight:700;
+}
+
+/*   Vision Section  */
+
+.visionsec{
+  background:var(--mint);
+  padding:60px 0;
+  border-top:1px solid #e6ece4;
+}
+
+.visiongrid{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:40px;          
+}
+
+.visiontxt{
+  flex:1;           
+}
+
+.visionpic{
+  flex:1;
+  text-align:right;   
+}
+
+.visionpic img{
+  width:102%;
+  height:auto;
+  border-radius:18px;
+  object-fit:cover;
+  box-shadow:0 2px 6px rgba(0,0,0,.08);
+}
+
+.visionpic{ order:2; }
+.visiontxt{ order:1; text-align:left; }
+
+.sectitle{
+  margin:0 0 14px;
+  color:var(--olive-700);
+}
+.sectitle.centerit{ text-align:center; }
+
+.btnx{
+  display:inline-block;
+  background:var(--olive);
+  color:#fff;
+  padding:12px 18px;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:600;
+}
+
+.ph{
+  background:linear-gradient(145deg,#fafcf9,#e6efe3);
+  border:2px dashed #748874;
+  border-radius:var(--radius);
+  height:220px;
+}
+
+/*  Services (Flexbox + Hover Info)  */
+/* I used Flexbox in the services section to arrange the cards. */
+/* I created hover effect to display service information when the mouse hovers. */
+
+.servicesec{
+  background:var(--beige);
+  padding:54px 0;
+}
+
+.empty-msg {
+    width: 100%;
+    text-align: center;
+    font-size: 1.3rem;
+    color: var(--muted);
+    padding: 40px 0;
+}
+
+
+
+.cardgrid .servcard {
+    flex: 0 0 320px;
+    max-width: 320px;
+}
+
+.cardgrid {
+    display: grid;
+    grid-template-columns: 350px 350px 350px;  
+    gap: 22px;
+    justify-content: center; 
+	
+}.cardgrid1 .servcard1 {
+    flex: 0 0 320px;
+    max-width: 320px;
+}
+
+.cardgrid1 {
+    display: grid;
+    grid-template-columns: 350px 350px 350px;  
+    gap: 22px;
+    justify-content: center; 
+}
+
+.servcard{
+  position:relative;
+  background:#fff;
+  border:1px solid #e6e6e6;
+  border-radius:var(--radius);
+  padding:18px;
+  display:flex;
+  flex-direction:column;
+  text-align:center;
+  flex:1 1 300px;
+  width:350px;
+  height:520px;
+  box-shadow:0 2px 6px rgba(0,0,0,.05);
+  overflow:hidden;
+}.servcard1{
+  position:relative;
+  background:#fff;
+  border:1px solid #e6e6e6;
+  border-radius:var(--radius);
+  padding:18px;
+  display:flex;
+  flex-direction:column;
+  text-align:center;
+  flex:1 1 300px;
+  width:350px;
+  height:520px;
+  box-shadow:0 2px 6px rgba(0,0,0,.05);
+  overflow:hidden;
+}
+
+.cardimgwrap{
+  height:360px;
+  overflow:hidden;
+  border-radius:16px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-bottom:10px;
+}
+.cardimgwrap img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.cardtitle{
+  margin:12px 0 6px;
+  font-size:1.1rem;
+  font-weight:700;
+  color:var(--olive-700);
+}
+.carddesc{ 
+  color:var(--muted);
+  font-size:.95rem;
+}
+
+.srv-info{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(255,255,255,0.95);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:18px;
+  text-align:center;
+  font-size:.95rem;
+  opacity:0;
+  border-radius:20px;
+  transition:opacity .25s ease;
+}
+
+.servcard:hover .srv-info{
+  opacity:1;
+}.servcard1:hover .srv-info{
+  opacity:1;
+}
+
+
+
+/*      Reviews.    */
+/* I added customer reviews section that includes service name, rating, and feedback. */
+
+.reviewsec {
+  background: #f1f4ef;
+  padding: 46px 0;
+}
+
+.reviewgrid {
+  display: flex;               
+  flex-wrap: wrap;
+  gap: 22px;
+  justify-content: center;
+}
+
+.reviewrow{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  background:#fff;
+  border:1px solid #ebebeb;
+  border-radius:14px;
+  padding:20px 24px;
+  box-shadow:0 1px 3px rgba(0,0,0,.04);
+  width:100%;
+  max-width:520px;
+  height:auto;
+}
+
+
+.reviewava {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e9efe7;
+  border-radius: 50%;
+  font-size: 18px;
+}
+
+.reviewmain {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1; 
+}
+
+.reviewstars {
+  color: #f2b632;
+  font-size: 15px;
+}
+
+.reviewtext {
+  margin: 0;
+  color: #434d43;
+}
+
+.arrowbtn {
+  border: none;
+  background: #fff;
+  color: #95a295;
+  font-size: 26px;
+  line-height: 1;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  box-shadow: 0 1px 4px rgba(0,0,0,.08);
+  cursor: pointer;
+  align-self: center;  
+  margin-left: 10px;   
+}
+
+.arrowbtn:hover {
+  background: #f5f7f4;
+}
+
+/*   Before & After Section  */
+/* I created a Before & After section showing two images side by side. */
+
+.beforeafter{
+  background: var(--beige);
+  padding: 70px 0;
+  border-top: 1px solid #e7e7e7;
+  border-bottom: 1px solid #e7e7e7;
+}
+
+.bagrid{
+  display: flex;
+  flex-wrap: wrap;       
+  gap: 40px;
+  justify-content: center;
+}
+
+.bacard{
+  background: #fff;
+  border: 1px solid #ececec;
+  border-radius: 14px;
+  padding: 28px;
+  box-shadow: 0 1px 3px rgba(0,0,0,.04);
+  width: 520px;          
+  box-sizing: border-box;
+}
+
+.batitle{
+  margin: 0 0 18px;
+  color: #3f4f3f;
+  font-weight: 600;
+}
+
+.bapair{
+  display: flex;
+  gap: 18px;
+}
+
+.baphoto{
+  flex: 1 1 48%;
+  height: 280px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+.baphoto img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.label-row{
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.balabel{
+  background: #fff;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 14px;
+  color: #3f4f3f;
+  border: 1px solid #e1e6df;
+  display: inline-block;
+}
+
+/*   Footer  */
+/* I included a footer that contains copyright and contact information. */
+
+.footerbox{
+  background:var(--olive);
+  color:#fff;
+  padding:40px 0 25px;
+  text-align:center;
+}
+.footergrid{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:30px;
+  align-items:center;
+  justify-items:center;
+}
+.footcol h4{
+  font-size:18px;
+  font-weight:700;
+  letter-spacing:.5px;
+  margin-bottom:12px;
+  text-transform:uppercase;
+}
+.footcol p{
+  color:#f2f2f2;
+  font-size:15px;
+  line-height:1.6;
+  margin:5px 0;
+}
+.footcenter{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:10px;
+}
+.footcenter .brandtxt{
+  font-size:24px;
+  font-weight:800;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  margin:0;
+}
+.footlogo{
+  width:120px;
+  height:95px;
+  border-radius:14px;
+  overflow:hidden;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+.footlogo img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+}
+.footsocial{ text-align:center; }
+.sociallist{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  margin-top:10px;
+}
+.sociallist a{
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+  width:40px;
+  height:40px;
+  background:#ffffff22;
+  border-radius:10px;
+  overflow:hidden;
+}
+.sociallist a:hover{
+  background:#ffffff40;
+  transform:scale(1.08);
+}
+.sociallist a img{
+  width:22px;
+  height:22px;
+  object-fit:contain;
+}
+.copyline{
+  border-top:1px solid #ffffff33;
+  text-align:center;
+  margin-top:20px;
+  padding-top:10px;
+  color:#f0f0f0;
+  font-size:13px;
+}
+
+.navlinks a.isactive{
+  text-decoration:underline;
+  opacity:1;
+}
+
+/*  Page hero */
+/* Page hero: main header section at top of each page */
+
+.pagehero{
+  color:var(--olive-700);
+  text-align:center;
+  padding:30px 0;
+  border-bottom:1px solid #e6ece4;
+  background:var(--mint);
+}
+.pagehero .sectitle{
+  color:var(--olive-700);
+  margin-bottom:10px;
+  font-size:1.8rem;
+}
+.pagehero p{
+  color:var(--muted);
+  font-size:1rem;
+  margin:0;
+}
+.pagehero--solid{
+  background:var(--olive-700);
+  color:#fff;
+  padding:20px 0;
+  border-bottom:none;
+}
+.pagehero--solid .sectitle{ 
+  color:#fff;
+}
+
+/* ===== Sort bar ===== */
+/* I added the Sort Bar section for sorting options in the Services page as required. */
+
+.sortbar{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin:12px 0 22px;
+}
+.sortlabel{
+  font-weight:700;
+  color:var(--olive-700);
+  font-size:.95rem;
+}
+.sortselect{
+  border:1px solid #ccd6cc;
+  background:#fff;
+  padding:8px 10px;
+  border-radius:8px;
+  width:160px;
+  font:inherit;
+  color:var(--text);
+}
+.sortselect:focus{
+  border: 1px solid #ccd6cc;
+  border-radius: 8px;
+}
+
+
+/*    About Us Page Styling   */
+
+body.dashboard-page {
+  background: var(--beige);
+}
+
+/* i used border-redius to make scrollbar edges smooth and rounded */
+
+.about-card {
+  background:#fff;
+  border:2px solid #e6ece4;
+  border-radius:18px;
+  padding:26px;
+  max-width:1200px;
+  margin:0 auto 40px;
+  box-shadow:0 2px 6px rgba(0,0,0,.05);
+}
+
+.sectitle {
+  margin:0 0 18px;
+  color:var(--olive-700);
+  font-size:1.3rem;
+  font-weight:700;
+  text-transform:capitalize;
+}
+
+/* horizontal scroll for team list */
+/* i used overflow-x to control horizontal */
+
+.team-scroll{
+  display:flex;
+  gap:100px;                    
+  padding:18px 0 12px;
+  overflow-x:scroll;           
+  scroll-behavior:smooth;
+  border-top:1px solid #e6ece4;
+  border-bottom:1px solid #e6ece4;
+  margin-top:15px;
+}
+
+/* Custom Scrollbar for Team Section */
+
+/* i ues the scrollbar height to make it visible and match the design */
+.team-scroll::-webkit-scrollbar{
+  height:10px;
+}
+
+/* i ues the(thumb) with theme color and rounded corners */
+.team-scroll::-webkit-scrollbar-thumb{
+  background:var(--olive-700);
+  border-radius:6px;
+}
+
+/* i ues the scrollbar track with a light color for contrast */
+.team-scroll::-webkit-scrollbar-track{
+  background:#e6ece4;
+}
+
+/* Each team member block */
+.member{
+  flex:0 0 auto;
+  width:160px;                  
+  text-align:center;
+}
+/* i used object-fit how the image fits */
+.member img{
+  width:150px;
+  height:150px;
+  border-radius:12px;
+  object-fit:cover;
+  background:#e7eddd;
+  border:2px solid #d5dfd4;
+}
+
+.member a{
+  display:inline-block;
+  margin-top:8px;
+  font-weight:700;
+  color:var(--olive-700);
+  text-decoration:none;
+  border-bottom:2px solid var(--olive-700);
+}
+
+.member a:hover{
+  color:var(--olive);
+}
+
+/*   Join Our Team Form Section  */
+
+.about-join-form {
+  background-color:var(--mint);
+  border-radius:0 0 10px 10px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0 40px;
+}
+
+.about-join-form label {
+  font-weight: 600;
+  text-align: left;
+  color: var(--olive-700);
+}
+
+.about-join-form input,
+.about-join-form textarea {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 8px;
+}
+
+.about-join-form input {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+
+/*    service Join Our Team Form Section  */
+
+.join-form {
+  background-color:var(--mint);
+  border-radius:0 0 10px 10px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0 40px;
+}
+
+.join-form label {
+  font-weight: 600;
+  text-align: left;
+  color: var(--olive-700);
+}
+
+.join-form input,
+.join-form textarea {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 8px;
+}
+
+.join-form input {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+/* Join form title */
+.join-title {
+  color: var(--olive-700);
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+/* Split form into two columns left and right */
+.form-left, .form-right {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.submit-btn {
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.submit-btn button {
+  background-color: #fff;
+  color: black;
+  padding: 10px 30px;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+/* Hover effect for submit button */
+.submit-btn button:hover {
+  background-color:var(--olive);
+}
+
+/* i used cursor to change the mouse pointer style */
+.submit-btn .btn {
+  background-color: var(--olive);
+  color: #fff;
+  padding: 12px 40px;
+  border-radius: 8px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+}
+
+.submit-btn .btn:hover {
+  background-color: var(--olive-700);
+}
+
+/*  action Buttons */
+
+.actions {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.btn {
+  background-color: var(--olive);
+  color: #fff;
+  padding: 10px 25px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  margin: 0 10px;
+  display: inline-block;
+  width: 100%;
+}
+
+.btn:hover {
+  background-color: var(--olive-700);
+}
+
+.action-buttons {
+  max-width:1100px; 
+  margin:12px auto 0;
+  display:flex;
+  flex-direction:column; 
+  gap:14px;
+  align-items: center;
+}
+
+.action-btn {
+  background-color: var(--olive);
+  width:100%;
+  color: #fff;
+  padding: 12px 40px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  text-align: center;
+}
+
+.action-btn:hover {
+  background-color: var(--olive-700);
+}
+
+
+/*add Employee Form Container*/
+
+.join-section {
+  background-color:var(--mint);
+  border-radius: var(--radius);
+  padding: 50px 0;
+  margin: 60px auto;
+  text-align: center;
+  width: 90%;
+  max-width: 900px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+
+/*  Staff Member Profile Page */
+
+.profile-table.wire{
+  width: 92%;
+  margin: 26px auto;
+  border-collapse: collapse;
+  background: var(--mint);
+  border: 1px solid #cbd4c5;
+  table-layout: fixed;
+}
+
+.profile-table.wire th,
+.profile-table.wire td{
+  border: 1px solid #9e9e9e;
+  padding: 10px 12px;
+  vertical-align: top;
+  text-align: left;
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.profile-table.wire thead th{
+  background: #dce6d9;
+  color: var(--olive-700);
+  font-weight: 700;
+}
+
+/* adjust width and alignment for special cells */
+.profile-table.wire .namecell{
+	width: 120px; text-transform: lowercase;
+}
+.profile-table.wire .photocell{
+	width: 150px; text-align: center; 
+}
+
+/* Profile photo formatting */
+.profile-table.wire .photocell img{
+  display: block;
+  margin: 0 auto;
+  object-fit: cover;
+  border: 1px solid #bdbdbd;
+  border-radius: 6px;
+}
+
+.profile-table.wire .expertcell{
+  text-transform: lowercase;
+  font-weight: 700;
+}
+
+/* Nested list spacing inside table */
+.profile-table.wire ul{
+  margin: 0 0 0 18px;
+  padding: 0;
+}
+
+/* i used > so the style only affects the direct li inside ul.flat */
+.profile-table.wire ul.flat > li{
+  margin-bottom: 6px;
+}
+
+/* Light gray empty cell */
+.profile-table.wire td.empty{
+  background: #fafafa;
+}
+
+
+/* Solid title bar */
+.page-title.page-title--solid{
+  background: #9e9e9e;
+  color:#fff;
+}
+
+/*   Customer Dashboard and Forms  */
+
+/* i used background color for the dashboard page */
+.dashboard-page{ background:var(--beige); }
+
+/* this part is for the page title design */
+.page-title{
+  background:var(--mint); 
+  color:var(--olive-700);
+  font-size:1.7rem;
+  font-weight:700;
+  text-align:center;
+  padding:35px 0;
+  margin:0;
+  text-transform:capitalize;
+}
+
+/* i used padding for spacing and background color for the dashboard section */
+.dashboard{
+  background:var(--beige);
+  padding:24px 30px 60px;
+}
+
+/* this part is for the main dashboard card style */
+.dashboard-card{
+  background:#fff;
+  border:2px solid #e6ece4;
+  border-radius:18px; /* used to make corners rounded*/
+  padding:22px;
+  max-width:1200px;
+  margin:0 auto;
+  box-shadow:0 2px 6px rgba(0,0,0,.05);
+}
+
+/* i used smaller size for team section card */
+.dashboard-card.team-box{
+  max-width:900px;
+  margin-bottom:35px;
+}
+
+/* this part is for the section title outside the cards */
+.section-title.outside{
+  background:var(--beige);
+  border:none;
+  padding:0;
+  margin:30px auto;
+  max-width:1100px;
+  color:var(--olive-700);
+  font-weight:700;
+  font-size:1.15rem;
+}
+
+/* i used overflow  */
+.table-wrap{
+  overflow:auto;
+  border-radius:14px;
+}
+
+/* this part is for the table style */
+.table-wrap table{
+  width:100%;
+  min-width:880px;
+  font-size:1.05rem;
+  border-collapse:separate;
+  border-spacing:0;
+  border:1px solid #cbd4c5;
+}
+
+/* i used bold text for the table header */
+.table-wrap thead th{
+  background:#fff;
+  color:var(--text);
+  font-weight:700;
+  padding:14px;
+  line-height:1.25;
+  text-align:left;
+  border-bottom:1px solid #cbd4c5;
+  border-right:1px solid #cbd4c5;
+}
+
+/* this part is for the first column of the table */
+.table-wrap tbody th[scope="row"]{
+  width:190px;
+  padding:14px 16px;
+  line-height:1.25;
+  background:#f3f5f1;
+  color:var(--olive-700);
+  font-weight:700;
+  text-transform:lowercase;
+  text-align:left;
+  border-top:1px solid var(--olive-700);
+  border-right:1px solid #cbd4c5;
+}
+
+/* i used white background for table data cells */
+.table-wrap tbody td{
+  background:#fff;
+  color:var(--text);
+  padding:10px;
+  border-top:1px solid #cbd4c5;
+  border-right:1px solid #cbd4c5;
+}
+
+/* i used olive color for the line between rows */
+.table-wrap tbody tr + tr th[scope="row"]{ 
+  border-top-color:var(--olive-700); 
+}
+
+/* this part is for rounded corners in table */
+.table-wrap tbody tr:first-child th[scope="row"]{ 
+  border-top-left-radius:12px; 
+}
+.table-wrap tbody tr:last-child  th[scope="row"]{ 
+  border-bottom-left-radius:12px; 
+}
+.table-wrap thead tr:first-child th:last-child{
+  border-top-right-radius:12px; 
+}
+.table-wrap tbody tr:last-child td:last-child{
+  border-bottom-right-radius:12px; 
+}
+
+/* i removed double borders on the table sides */
+.table-wrap thead th:first-child{ border-left:none; }
+.table-wrap tbody td:last-child{ border-right:none; }
+
+/* this part is for the buttons under the table */
+.actions-outside-Customer{
+  max-width:1100px;
+  margin:12px auto 0;
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+
+.actions-outside-Customer a{ color:#fff;}
+
+/* background color and bold text for the button */
+.button{
+  display:block;
+  width:100%;
+  text-align:center;
+  background:var(--olive);
+  color:var(--olive-700);
+  padding:14px;
+  border-radius:var(--radius);
+  font-weight:700;
+  border:1px solid #ccd6cc;
+}
+
+.button:hover{ background:var(--olive-700); }
+
+
+
+/* this part is for the white card that contains the form */
+.form-card{
+  max-width:780px;
+  width:80%;
+  margin:20px auto 60px;
+  padding:30px 50px;
+  border-radius:var(--radius);
+  background:#fff;
+  border:1px solid #e6ece4;
+  box-shadow:0 2px 6px rgba(0,0,0,.05); /* used for soft shadow*/
+}
+
+/* i used a bigger card size for request form */
+.req-card{
+  max-width:900px;
+  width:92%;
+  margin:28px auto 44px;
+  padding:36px 44px;
+}
+
+/* this part is for the form layout inside the page */
+.service-form{
+  display:grid;
+  gap:14px; 
+}
+
+/* i used bold label text for the form fields */
+.service-form label{
+  font-weight:700;
+  color:var(--text);
+}
+
+/* i used white background and rounded borders for inputs */
+
+.service-form select,
+.service-form input[type="text"],
+.service-form input[type="date"],
+.service-form textarea{
+  width:100%;
+  background:#fff;
+  color:var(--text);
+  border:1px solid #cbd4c5;
+  border-radius:8px;
+  padding:12px 14px;
+  font:inherit;
+}
+.service-form select{ min-height:44px; }
+.service-form textarea{
+  min-height:200px;
+  resize:vertical; /* allows vertical resize */
+}
+
+/* this part is for the star rating design */
+.stars{
+  display:flex;
+  justify-content:center;
+  padding:8px 0 6px;
+}
+.stars span{
+  font-size:36px;
+  line-height:1;
+  color:#bbb;
+  cursor:pointer; /* used to show hand pointer*/
+  user-select:none; /* prevents text selection*/
+  margin-right: 10px;
+}
+
+/* i used hover effect to change the star color to gold */
+.stars span:hover{
+  color:#f5b301;
+}
+
+/* this part is for the submit button style */
+.btn-submit{
+  display:block; 
+  width:100%; 
+  max-width:1100px; 
+  margin:20px auto 0; 
+  padding:16px 0;
+  background:#4d684d; 
+  color:#fff; 
+  border:1px solid #bdbdbd; 
+  border-radius:8px; 
+  font-weight:700; 
+  cursor:pointer;
+  transition:background .2s ease; /* used for smooth hover animation*/
+}
+
+/* i used hover effect to change the submit button color */
+.btn-submit:hover{ 
+  background:var(--olive-700); 
+}
+
+
+/* price text */
+
+/* style price*/
+.price-tag{
+  color:#4d684d;                
+  font-weight:600;              
+  margin:8px 0;                 
+  font-size:1rem;              
+  letter-spacing:.4px;          
+  text-align:center;           
+}
+
+/* this part is for the rating options section */
+
+.rating-options{
+  display:flex;                 
+  justify-content:center;       
+  gap:14px;                     
+  padding:8px 0 6px;            
+  flex-wrap:wrap;               
+}
+
+/* this part is for each label inside the rating section */
+.rating-options label{
+  background:#f0f5ef;           
+  padding:10px 14px;            
+  border-radius:8px;            
+  border:1px solid #ccd6cc;
+  cursor:pointer;               
+  font-weight:600;              
+  color:var(--olive-700);       
+}
+
+/* i added space between the input and the label text */
+.rating-options input{ margin-right:6px; }
+
+/* i used hover effect to change the background color when user points */
+.rating-options label:hover{ background:var(--mint); }
+
+/* ==== Main Section (FAQ Page) ==== */
+
+main {
+  padding: 40px 0; 
+}
+
+/* this part is for the box that contains all the previous questions */
+.faq-section {
+  max-width: 700px;             
+  margin: 0 auto 40px;          
+  background: #fff;             
+  border: 1px solid #ccd6cc;    
+  border-radius: 18px;          
+  padding: 30px 40px;           
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); 
+}
+
+/* i used this to style the FAQ section title */
+.faq-section h3 {
+  font-size: 1.4rem;            
+  color: var(--olive);          
+  margin-bottom: 15px;          
+}
+
+/* this part is for each question and answer box */
+.faq-item {
+  margin-bottom: 20px;          
+}
+
+/* i used bold olive color for each question */
+.faq-item h4 {
+  font-weight: 700;
+  color: var(--olive-700);
+  margin-bottom: 5px;
+}
+
+/* i styled the answers with dark gray color */
+.faq-item p {
+  color: #333;
+  margin-left: 10px;
+}
+
+/* this part is for the box where the user can ask a new question */
+.ask-section {
+  max-width: 700px;
+  margin: 0 auto;
+  background: #fff;
+  border: 1px solid #ccd6cc;
+  border-radius: 18px;
+  padding: 30px 40px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* i used this to style the â€œask usâ€ title */
+.ask-section h3 {
+  font-size: 1.2rem;
+  color: var(--olive);
+  margin-bottom: 20px;
+}
+
+/* this part is for the textarea where the user writes the question */
+.faq-form textarea {
+  width: 100%;
+  height: 120px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 15px;
+  font-family: inherit;
+  margin-bottom: 20px;
+  resize: vertical;             
+}
+
+/* this part is for the submit button design */
+.faq-form button {
+  background: var(--olive);
+  color: #fff;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;              
+  transition: 0.3s; 
+  width:100%;  
+}
+
+/* i used hover effect to make the button darker */
+.faq-form button:hover {
+  background: var(--olive-700);
+}
+
+/*style provider Dashboard*/
+main {
+  background-color:var(--beige) ;
+  padding-bottom: 40px;
+  border-radius: 10px;
+}
+
+/* style buttons provider's page */
+.action-container {
+  background: var(--mint); 
+  padding: 50px 0;
+  border-radius: 10px 10px 0 0;
+  text-align: center;
+  margin-top: 60px;
+}
+
+/* Staff grid and cards */
+.staff-grid {
+  flex-wrap: wrap;
+  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+  justify-items: center;
+  margin: 40px 0;
+}
+.card-wrapper {
+  position: relative;
+}
+
+.staff-card {
+  display: block;
+  width: 220px;
+  background-color: #fff;
+  padding: 15px;
+  text-decoration: none;
+  color: #000;
+  border-radius: var(--radius);
+  padding: 16px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+/* the check */
+.select-box {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #4d6648;
+  background-color: #fff;
+}
+.staff-card:hover {
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.staff-card img {
+  width: 150px;
+  height: 150px;
+  border-radius: 10px;
+  object-fit: cover;
+  margin-bottom: 10px;
+  border: 1px solid var(--olive-700);
+}
+
+.staff-card p {
+  margin: 5px 0;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.actions-outside{
+  max-width:500px; margin:12px auto 0;
+  display:flex; flex-direction:column; gap:14px;
+}
+
+.actions-outside a{ color:#fff;}
+
+/*style delete button in the provider class */
+.btnDelet{
+  background-color: var(--olive);
+  color: #fff;
+  padding: 10px 25px;
+  border-radius: 8px;
+  border:none;
+  text-decoration: none;
+  font-weight: 600;
+  margin: 0 10px;
+  display: inline-block;
+  width: 30%;
+}
+.btnDelet:hover {
+  background-color: var(--olive-700);
+}
+
+/* ==== DARK THEME (based on body.theme-dark) ==== */
+
+body.theme-dark{
+  --olive:#cdd8cd;
+  --olive-700:#e8f2e8;
+  --beige:#151815;
+  --mint:#1d221e;
+  --text:#f6f6f4;
+  --muted:#b9c4b9;
+  background-color:#1b1f1c;
+}
+body.theme-dark .bread{
+  background:#1b1f1c;
+  border-bottom:1px solid #2a2e2c;
+}
+
+body.theme-dark .bread a,
+body.theme-dark .bread .pagecrumb{
+  color:var(--text);
+}
+
+body.theme-dark .bread li + li::before{
+  color:var(--muted);
+}
+
+body.theme-dark .visionsec{
+  background:#202521;
+}
+
+body.theme-dark .servicesec{
+  background:#1a1e1b;
+}
+
+body.theme-dark .reviewsec{
+  background:#232823;
+}
+
+body.theme-dark .beforeafter{
+  background:#1c201d;
+}
+
+body.theme-dark .servcard,
+body.theme-dark .servcard1,
+body.theme-dark .reviewrow,
+body.theme-dark .bacard{
+  background:#222722;
+  border-color:#2d322d;
+}
+
+body.theme-dark .cardtitle,
+body.theme-dark .batitle,
+body.theme-dark .sectitle{
+  color:var(--olive-700);
+}
+
+body.theme-dark .carddesc,
+body.theme-dark .reviewtext,
+body.theme-dark .badesc{
+  color:var(--muted);
+}
+
+body.theme-dark .price-tag{
+  color:var(--olive-700);
+}
+
+body.theme-dark img{
+  filter:brightness(0.96);
+}
+
+body.theme-dark .footerbox{
+  background:#202521;
+  color:var(--text);
+}
+
+body.theme-dark .footerbox .brandtxt{
+  color:var(--olive-700);
+}
+body.theme-dark .srv-info{
+  background:rgba(0,0,0,0.78);
+  color:var(--text);
+  height:360px;
+}
+
+/*THEME BUTTON */
+.theme-toggle,
+.theme-placeholder{
+  min-width:110px;
+  height:34px;
+  padding:8px 14px;
+  border-radius:999px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:0.9rem;
+}
+
+.theme-toggle{
+  border:1px solid #ffffff66;
+  background-color:transparent;
+  color:#fff;
+  cursor:pointer;
+}
+
+.theme-toggle:hover{
+  background-color:#ffffff22;
+}
+
+.theme-placeholder{
+  visibility:hidden;
+}
+
+/*  BACK TO TOP BUTTON  */
+#backToTopBtn{
+  position:fixed;
+  right:24px;
+  bottom:24px;
+  padding:10px 14px;
+  border:none;
+  border-radius:50%;
+  background-color:var(--olive);
+  color:#fff;
+  font-size:18px;
+  cursor:pointer;
+  box-shadow:0 4px 10px rgba(0,0,0,0.3);
+  opacity:0;
+  pointer-events:none;
+  transform:translateY(10px);
+  transition:0.3s ease;
+  z-index:1000;
+}
+
+#backToTopBtn.show{
+  opacity:1;
+  pointer-events:auto;
+  transform:translateY(0);
+}
+
+#sort {
+    background-color: #ffffff;
+    color: #333;
+    border: 1px solid #ccc;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.theme-dark #sort {
+    background-color: #3a3a3a;
+    color: #fff;
+    border: 1px solid #aaa;
+}
+
+
+/* Jet Olive Dark Override */
+body.theme-dark{
+  --olive:#a8b39a;
+  --olive-700:#cfd8c7;
+  --beige:#0f110f;
+  --mint:#141714;
+  --text:#f5f5f5;
+  --muted:#9aa898;
+  background-color:#0d0f0d;
+}
+
+/* DARK THEME — TABLE COLORS */
+body.theme-dark .table-wrap table{
+  background: #0f120f !important;
+}
+
+body.theme-dark .table-wrap tbody th[scope="row"],
+body.theme-dark .table-wrap tbody td{
+  background: #161a16 !important;
+  color: #e8f2e8 !important;
+  border-color: #2a2f2a !important;
+}
+
+body.theme-dark .table-wrap tbody tr td{
+  border-top: 1px solid #2a2f2a !important;
+}
+
+body.theme-dark .table-wrap tbody tr + tr th[scope="row"]{
+  border-top-color: #4d584d !important;
+}
+/* DARK THEME – FORM FRAMES */
+body.theme-dark .form-card,
+body.theme-dark .req-card,
+body.theme-dark .dashboard-card{
+  background: #161a16 !important;
+  border-color: #2a2f2a !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.6) !important;
+}
+
+body.theme-dark .form-card input,
+body.theme-dark .form-card textarea,
+body.theme-dark .form-card select,
+body.theme-dark .req-card input,
+body.theme-dark .req-card textarea,
+body.theme-dark .req-card select{
+  background: #0f120f !important;
+  border: 1px solid #3a3f39 !important;
+  color: #e8f2e8 !important;
+}
+
+body.theme-dark ::placeholder{
+  color: #b8c3b8 !important;
+}
+/* DARK THEME – FORM + FAQ + CARD FRAMES */
+body.theme-dark .form-card,
+body.theme-dark .req-card,
+body.theme-dark .dashboard-card,
+body.theme-dark .faq-block {
+  background: #161a16 !important;
+  border-color: #2a2f2a !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.6) !important;
+}
+
+/* INPUTS INSIDE */
+
+body.theme-dark .form-card input,
+body.theme-dark .form-card textarea,
+body.theme-dark .form-card select,
+body.theme-dark .req-card input,
+body.theme-dark .req-card textarea,
+body.theme-dark .req-card select {
+  background: #0f120f !important;
+  border: 1px solid #3a3f39 !important;
+  color: #e8f2e8 !important;
+}
+
+body.theme-dark ::placeholder {
+  color: #b8c3b8 !important;
+}
+body.theme-dark .faq-section,
+body.theme-dark .ask-section{
+  background:#161a16;
+  border-color:#2a2f2a;
+  box-shadow:0 2px 6px rgba(0,0,0,.6);
+}
+
+body.theme-dark .faq-item h4{
+  color:var(--olive-700);
+}
+
+body.theme-dark .faq-item p{
+  color:#e8f2e8;
+}
+
+body.theme-dark .ask-section h3{
+  color:var(--olive-700);
+}
+/* DARK THEME — STAFF CARDS */
+body.theme-dark .staff-card {
+  background: #161a16 !important;
+  border-color: #2a2f2a !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,.6) !important;
+}
+
+body.theme-dark .staff-card h4,
+body.theme-dark .staff-card p {
+  color: #e8f2e8 !important;
+}
+
+body.theme-dark .staff-card img {
+  background: #1c1f1c !important;
+}
+body.theme-dark .profile-table.wire thead th{
+  color: #ffffff; 
+  background: #2a2e2c;
+}
+
+body.theme-dark .profile-table.wire td,
+body.theme-dark .profile-table.wire th{
+  border-color: #3a3f3a;
+  color: #f5f5f5;
+}
+
+body.theme-dark .profile-table.wire .namecell,
+body.theme-dark .profile-table.wire .photocell,
+body.theme-dark .profile-table.wire .expertcell{
+  color: #f5f5f5;
+}
+body.theme-dark .profile-table.wire td{
+  background:#111412 !important;
+  color:#f5f5f5 !important;
+}
+
+body.theme-dark .srv-info{
+  background:rgba(0,0,0,0.78);
+  color:var(--text);
+  height:550px;
+  
+}
+
+/*  responsive disgen */
+.headerbox{
+  background-color: var(--olive);
+  width: 100%;
+}
+
+.headerinner{
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.leftside{
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.brandtxt{
+  font-size: 22px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.navlinks{
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.navlinks a{
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+}
+
+.theme-toggle{
+  padding: 6px 14px;
+  border-radius: 100px;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+@media (max-width: 750px){
+
+  .headerinner{
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .navlinks{
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 10px 24px;
+    width: 100%;
+  }
+
+  .navlinks a{
+    white-space: nowrap;
+  }
+
+  .theme-toggle{
+    align-self: flex-start;
+    margin-top: 10px;
+  }
+
+  .headerbox{
+    padding-bottom: 14px;
+  }
+}
+
+.cardgrid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 990px){
+  .cardgrid{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 650px){
+  .cardgrid{
+    grid-template-columns: 1fr;
+  }
+
+  .servcard{
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .servcard img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+}.cardgrid1{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 990px){
+  .cardgrid1{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 650px){
+  .cardgrid1{
+    grid-template-columns: 1fr;
+  }
+
+  .servcard1{
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .servcard1 img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+}  
+.theme-toggle {
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.theme-toggle:hover {
+  border-color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.theme-light .theme-toggle {
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  color: #000;
+}
+
+.theme-light .theme-toggle:hover {
+  background: rgba(0,0,0,0.05);
+  border-color: #000;
+}
+
+.headerbox .brandtxt{
+  color: #ffffff !important;
+}
+@media (max-width: 650px){
+  .footergrid{
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .footcol{
+    width: 100%;
+  }
+
+  .footsocial .sociallist{
+    justify-content: center;
+  }
+}
+
+
+
+
+
+
+
+
+  /* -------- Customer Dashboard Buttons -------- */
+  .actions-outside-Customer {
+    padding: 0 10px;
+  }
+  .actions-outside-Customer .button {
+    padding: 12px;
+    font-size: 0.95rem;
+  }
+
+  /* -------- Page Title -------- */
+  .page-title {
+    font-size: 1.4rem;
+    padding: 25px 0;
+  }
+
+  /* -------- Forms (Request + Evaluation + General) -------- */
+  .req-card,
+.form-card {
+  padding: 20px 18px;
+  margin: 16px auto;
+}
+
+
+  .service-form select,
+  .service-form input,
+  .service-form textarea {
+    font-size: 1rem;
+    padding: 14px;
+  }
+
+  .btn-submit {
+    width: 100%;
+    font-size: 1rem;
+    padding: 14px 0;
+  }
+
+  /* -------- Rating Stars -------- */
+  .stars span {
+    font-size: 30px;
+    margin-right: 6px;
+  }
+
+  /* -------- FAQ Page -------- */
+  .faq-section,
+  .ask-section {
+    padding: 20px;
+    margin: 16px;
+  }
+
+  .faq-form textarea {
+    font-size: 1rem;
+    padding: 12px;
+    height: 130px;
+  }
+
+  .faq-form button {
+    font-size: 1rem;
+    padding: 14px;
+    width: 100%;
+  }
+
+  .faq-section h3,
+  .ask-section h3 {
+    font-size: 1.2rem;
+  }
+
+  .faq-item {
+    margin-bottom: 16px;
+  }
+}
+@media (max-width: 600px){
+
+  .reviewrow{
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    padding: 18px 16px;
+    gap: 12px;
+  }
+
+  .reviewava{
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+  }
+
+  .reviewmain{
+    width: 100%;
+    gap: 4px;
+  }
+
+  .review-service{
+    font-size: 14px;
+  }
+
+  .reviewstars{
+    font-size: 14px;
+  }
+
+  .reviewtext{
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .arrowbtn{
+    align-self: flex-end;
+    width: 28px;
+    height: 28px;
+    font-size: 20px;
+  }
+}
