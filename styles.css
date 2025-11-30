@@ -1972,25 +1972,48 @@ body.theme-dark .srv-info{
   .faq-item {
     margin-bottom: 16px;
   }
+
 }
 @media (max-width: 600px){
-  .reviews-title{
-    font-size: 20px;
-    margin-bottom: 10px;
+
+  .reviewrow{
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    padding: 18px 16px;
+    gap: 12px;
   }
 
-  .review-card{
-    padding: 12px 14px;
-    border-radius: 18px;
+  .reviewava{
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
   }
 
-  .review-card p{
+  .reviewmain{
+    width: 100%;
+    gap: 4px;
+  }
+
+  .review-service{
+    font-size: 14px;
+  }
+
+  .reviewstars{
+    font-size: 14px;
+  }
+
+  .reviewtext{
     font-size: 14px;
     line-height: 1.5;
   }
 
-  .review-card .service-name{
-    font-size: 14px;
+  .arrowbtn{
+    align-self: flex-end;
+    width: 28px;
+    height: 28px;
+    font-size: 20px;
   }
 }
+
 
