@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PURE BEAUTY — About us</title>
+  <link rel="stylesheet" href="styles.css" />
+<script>
+
+
+function validateJoinForm(event) {
+  let name = document.getElementById("join-name").value.trim();
+  let photo = document.getElementById("join-photo");
+  let dob = document.getElementById("join-dob").value;
+  let email = document.getElementById("join-email").value.trim();
+  let exp = document.getElementById("join-exp").value.trim();
+  let skills = document.getElementById("join-skills").value.trim();
+  let edu = document.getElementById("join-edu").value.trim();
+  let msg = document.getElementById("join-msg").value.trim();
+  
+  /*  Check empty fields */
+  if (name === "" || photo.value === "" || dob === "" || email === "" ||
+      exp === "" || skills === "" || edu === "" || msg === "") {
+    alert(name + " " + "please fill all the required fields.");
+
+    event.preventDefault();
+    return false;
+  }
+
+  /* Name cannot start with a number */
+  if (!isNaN(name.charAt(0))) {
+    alert("Name cannot start with a number.");
+    event.preventDefault();
+    return false;
+  }
+
+  /*  Uploaded file must be an image */
+  let file = photo.files[0];
+  if (file && !file.type.startsWith("image/")) {
+    alert("Please upload a valid image file.");
+    event.preventDefault();
+    return false;
+  }
+
+  /*  Date of birth must be BEFORE or 2008 */
+  let selectedYear = new Date(dob).getFullYear();
+  if (selectedYear > 2008) {
+    alert("Date of birth must be before or 2008.");
+    event.preventDefault();
+    return false;
+  }
+
+  /* Success message */
+  alert("Your application has been submitted successfully!");
+  return true;
+}
+</script>
+
+
+  
+</head>
+<body class="dashboard-page">
+  <!-- Header -->
+  <header class="headerbox">
+    <div class="maincont headerinner">
+      <div class="leftside">
+        <div class="logoimg" aria-label="Brand logo">
+          <a href="index.html"><img src="images/logo.jpg" alt="PURE BEAUTY logo" /></a>
+        </div>
+        <span class="brandtxt">PURE BEAUTY</span>
+      </div>
+      <nav class="navlinks" aria-label="Main navigation">
+        <a href="services.html">Services</a>
+        <a href="about us.html" class="isactive">| About us</a>
+        <a href="service_provider.html">| Provider dashboard</a>
+        <a href="customer-dashboard.html">| Customer’s dashboard</a>
+      </nav>
+    </div>
+
+    <!-- Breadcrumb -->
+    <nav class="bread" aria-label="Breadcrumb">
+      <div class="maincont">
+        <ol>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about us.html" class="pagecrumb" aria-current="page">About us</a></li>
+        </ol>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Title bar-->
+  <div class="page-title">About us</div>
+
+  <main class="dashboard">
+    <!--card -->
+   <div class="dashboard-card team-box">
+
+      <h3 class="sectitle">Our Team</h3>
+
+      <!-- div member -->
+   <div class="team-scroll">
+
+        <div class="member">
+       
+          <div class="member-name"><a href="sara.html">  <img src="images/user.png" alt="Sara" />Sara</a></div>
+        </div>
+
+        <div class="member">
+          
+          <div class="member-name"><a href="lama.html"><img src="images/user.png" alt="Lama" />Lama</a></div>
+        </div>
+
+        <div class="member">
+         
+          <div class="member-name"><a href="lara.html"><img src="images/user.png" alt="Lara" />Lara</a></div>
+        </div>
+
+        <div class="member">
+        
+          <div class="member-name"><a href="noura.html">  <img src="images/user.png" alt="Noura" />Noura</a></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- card (join) -->
+    <section class="join-section">
+  <h3 class="join-title">Join Our Team<hr></h3>
+
+ <form class="about-join-form" onsubmit="validateJoinForm(event)">
+  
+  <div class="form-left">
+    <label>Name:</label>
+    <input id="join-name" type="text" placeholder="Enter your name">
+
+    <label>Upload Photo:</label>
+    <input id="join-photo" type="file">
+
+    <label>Date of Birth:</label>
+    <input id="join-dob" type="date" value="dd/mm/yyyy">
+
+    <label>Email:</label>
+    <input id="join-email" type="email" placeholder="example@email.com">
+  </div>
+
+  <div class="form-right">
+    <label>Area of Expertise:</label>
+    <textarea id="join-exp" placeholder=" Bridal Makeup, Hair Coloring"></textarea>
+
+    <label>Skills:</label>
+    <textarea id="join-skills" placeholder=" Hair Styling, Makeup"></textarea>
+
+    <label>Education:</label>
+    <textarea id="join-edu" placeholder="Bachelor in Cosmetology"></textarea>
+
+    <label>Message:</label>
+    <textarea id="join-msg" placeholder="input text"></textarea>
+  </div>
+
+  <div class="submit-btn">
+    <input type="submit" class="btn" value="Submit">
+  </div>
+
+</form>
+</section>
+  </main>
+
+  <!-- Footer  -->
+  <footer class="footerbox">
+    <div class="maincont footergrid">
+      <div class="footcol">
+        <h4>Contact us :</h4>
+        <p>+966587436873</p>
+        <p>info@gmail.com</p>
+        <p>Riyadh, Saudi Arabia</p>
+      </div>
+      <div class="footcol footcenter">
+        <div class="brandtxt">PURE BEAUTY</div>
+        <div class="footlogo"><img src="images/logo.jpg" alt="PURE BEAUTY logo" /></div>
+      </div>
+      <div class="footcol footsocial">
+        <h4>Social media</h4>
+        <div class="sociallist">
+       <a href="https://www.snapchat.com" target="_blank"><img src="images/snap.PNG" alt="Snapchat" /></a>
+<a href="https://x.com/?lang=ar" target="_blank"><img src="images/x.PNG" alt="X" /></a>
+<a href="https://www.facebook.com" target="_blank"><img src="images/face.PNG" alt="Facebook" /></a>
+
+        </div>
+      </div>
+    </div>
+    <div class="copyline">
+      <small>Copyright © 2025 PURE BEAUTY, All rights reserved</small>
+    </div>
+  </footer>
+<script src="main.js"></script>
+</body>
+</html>

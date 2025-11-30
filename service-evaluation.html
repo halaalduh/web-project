@@ -1,0 +1,111 @@
+ <!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PURE BEAUTY — Service evaluation</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<script src="main.js"></script>
+
+<header class="headerbox">
+    <div class="maincont headerinner">
+      <div class="leftside">
+        <div class="logoimg" aria-label="Brand logo"><a href="index.html">
+          <img src="images/logo.jpg" alt="PURE BEAUTY logo" /> </a>
+        </div>
+        <span class="brandtxt">PURE BEAUTY</span>
+      </div>
+
+
+      <nav class="navlinks">
+        <a href="services.html"> Services</a>
+        <a href="about us.html">| About us</a>
+        <a href="service_provider.html">| Provider dashboard</a>
+        <a href="customer-dashboard.html">| Customer’s dashboard</a>
+      </nav>
+    </div>
+	
+	<nav class="bread" aria-label="Breadcrumb">
+      <div class="maincont">
+        <ol>
+          <li><a href="index.html">Home</a></li>
+		  <li><a href="customer-dashboard.html">customer's dashboard</a></li>
+          <li><a href="service-evaluation.html" class="pagecrumb">service evaluation</a></li>
+        </ol>
+      </div>
+    </nav>
+	
+  </header>
+
+<div class="page-title">service evaluation</div>
+
+<main class="dashboard">
+  <div class="dashboard-card form-card">
+
+    <form class="service-form" novalidate action="service-evaluation.html" method="Post">
+      <!-- previous service -->
+      <label for="previous-service" class="field-title">previous service</label>
+      <select id="previous-service" name="previous-service" required>
+        <option disabled selected>previous service</option>
+        <option>Haircut – 13/07/2025</option>
+        <option>Manicure – 24/08/2025</option>
+        <option>Relaxing Massage – 15/08/2025</option>
+      </select>
+
+      <div class="stars" aria-label="rating">
+        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+      </div>
+
+
+      <!-- Feedback -->
+      <label for="feedback" class="field-title">Feedback</label>
+      <textarea id="feedback" name="feedback" placeholder="Feedback"></textarea>
+
+      <button type="submit" class="btn-submit">Submit</button>
+    </form>
+
+  </div>
+</main>
+
+
+  
+<footer class="footerbox">
+    <div class="maincont footergrid">
+      <!-- contact -->
+      <div class="footcol">
+        <h4>Contact us :</h4>
+        <p>+966587436873</p>
+        <p>info@gmail.com</p>
+        <p>Riyadh, Saudi Arabia</p>
+      </div>
+
+      <!-- center -->
+      <div class="footcol footcenter">
+        <div class="brandtxt">PURE BEAUTY</div>
+        <div class="footlogo">
+          <img src="images/logo.jpg" alt="PURE BEAUTY logo">
+        </div>
+      </div>
+
+      <!-- social -->
+      <div class="footcol footsocial">
+        <h4>Social media</h4>
+        <div class="sociallist">
+          <a href="https://www.snapchat.com" target="_blank"><img src="images/snap.PNG" alt="Snapchat" /></a>
+         <a href="https://x.com/?lang=ar" target="_blank"><img src="images/x.PNG" alt="X" /></a>
+         <a href="https://www.facebook.com" target="_blank"><img src="images/face.PNG" alt="Facebook" /></a>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="copyline">
+      <small>Copyright © 2025 PURE BEAUTY, All rights reserved</small>
+    </div>
+  </footer>
+
+
+</body>
+</html>
